@@ -2,11 +2,21 @@ package com.bridgelabz;
 
 public class EmplyoeeWage {
 	
-	public static final int IS_EMP_PRESENT=1;
-	public static final int IS_PART_TIME=2;
+	public static final int IS_EMP_PRESENT = 1;
+	public static final int IS_PART_TIME= 2;
+	public static int WAGE_PER_HOUR;
+	public static int MAX_HRS_ALLOWED;
+	public static int NUM_OF_WROKING_DAY;
+	public static String company;
 	
+	public EmplyoeeWage(int WAGE_PER_HOUR, int MAX_HRS_ALLOWED, int NUM_OF_WROKING_DAY, String company) {
+		this.WAGE_PER_HOUR = WAGE_PER_HOUR;
+		this.MAX_HRS_ALLOWED = MAX_HRS_ALLOWED;
+		this.NUM_OF_WROKING_DAY = NUM_OF_WROKING_DAY;
+		this.company = company;
+	}
 	
-	public static void calculateEmpWage(int WAGE_PER_HOUR, int MAX_HRS_ALLOWED, int NUM_OF_WROKING_DAY , String company) {
+	public static void calculateEmpWage() {
 		int monthlyEmpWage = 0;
 		int totalWorkingDays = 0;
 		int totalEmpHrs = 0;		
@@ -35,7 +45,9 @@ public class EmplyoeeWage {
 	
 	public static void main(String[] args) 
 	{
-		calculateEmpWage(20, 100, 20,"Dmart");
-		calculateEmpWage(15, 90, 20,"Relience");
+		EmplyoeeWage dmart = new EmplyoeeWage(20, 100, 20, "Dmart");
+		dmart.calculateEmpWage();
+		EmplyoeeWage reliance = new EmplyoeeWage(20, 100, 20, "Reliance");
+		reliance.calculateEmpWage();
 	}
 }
